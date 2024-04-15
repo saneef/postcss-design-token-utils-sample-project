@@ -1,14 +1,14 @@
-import purgecss from "@fullhuman/postcss-purgecss";
-import postcssProcessTokens from "postcss-design-token-utils";
-import postcssImport from "postcss-import";
-import postcssImportExtGlob from "postcss-import-ext-glob";
-import darkColorTokens from "./design-tokens/colors-dark.json" assert { type: "json" };
-import colorTokens from "./design-tokens/colors.json" assert { type: "json" };
-import fontTokens from "./design-tokens/font-family.json" assert { type: "json" };
-import spacingTokens from "./design-tokens/spacing.json" assert { type: "json" };
-import fontSizeTokens from "./design-tokens/text-sizes.json" assert { type: "json" };
-import fontWeightTokens from "./design-tokens/text-weights.json" assert { type: "json" };
-import { clampGenerator, tokensToObject } from "./utils.js";
+const purgecss = require("@fullhuman/postcss-purgecss");
+const postcssProcessTokens = require("postcss-design-token-utils");
+const postcssImport = require("postcss-import");
+const postcssImportExtGlob = require("postcss-import-ext-glob");
+const darkColorTokens = require("./design-tokens/colors-dark.json");
+const colorTokens = require("./design-tokens/colors.json");
+const fontTokens = require("./design-tokens/font-family.json");
+const spacingTokens = require("./design-tokens/spacing.json");
+const fontSizeTokens = require("./design-tokens/text-sizes.json");
+const fontWeightTokens = require("./design-tokens/text-weights.json");
+const { clampGenerator, tokensToObject } = require("./utils.js");
 
 const color = tokensToObject(colorTokens.items);
 const darkColor = tokensToObject(darkColorTokens.items);
@@ -52,4 +52,4 @@ const config = {
 	],
 };
 
-export default config;
+module.exports = config;

@@ -3,7 +3,6 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
-	"type": "module",
 	"scripts": {
 		"build": "NODE_ENV=production npm run build:css",
 		"build:css": "postcss --dir pages/css/ css/*.css",

@@ -1,4 +1,4 @@
-import slugify from "slugify";
+const slugify = require("slugify");
 
 /**
  * Takes an array of tokens and sends back and array of name
@@ -10,7 +10,7 @@ import slugify from "slugify";
  * @param      {number}  [viewports.max=1240]   Maximum viewport width
  * @returns {Array<string|{name: string, value: string}>}
  */
-export const clampGenerator = (tokens, { min = 320, max = 1240 } = {}) => {
+const clampGenerator = (tokens, { min = 320, max = 1240 } = {}) => {
 	const rootSize = 16;
 	const viewportsMin = min;
 	const viewportsMax = max;
@@ -47,7 +47,7 @@ export const clampGenerator = (tokens, { min = 320, max = 1240 } = {}) => {
  * @param {Array<{name: string, value: any}>} tokens
  * @return {object} {key, value}
  */
-export const tokensToObject = (tokens) => {
+const tokensToObject = (tokens) => {
 	const nameSlug = (text) => slugify(text, { lower: true });
 	let response = {};
 
@@ -57,3 +57,5 @@ export const tokensToObject = (tokens) => {
 
 	return response;
 };
+
+module.exports = { clampGenerator, tokensToObject };
