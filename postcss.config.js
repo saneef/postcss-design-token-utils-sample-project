@@ -26,6 +26,10 @@ const config = {
 		postcssImportExtGlob,
 		postcssImport,
 		postcssProcessTokens(tokens, {
+			breakpoints: {
+				sm: "320px",
+				md: "640px",
+			},
 			customProperties: [
 				{
 					id: "darkColor",
@@ -34,7 +38,12 @@ const config = {
 				},
 			],
 			utilityClasses: [
-				{ id: "color", prefix: "text", property: "color" },
+				{
+					id: "color",
+					prefix: "text",
+					property: "color",
+					responsiveVariants: true,
+				},
 				{ id: "color", prefix: "bg", property: "background-color" },
 				{ id: "fontFamily", prefix: "font", property: "font-family" },
 				{ id: "fontWeight", property: "font-weight" },
