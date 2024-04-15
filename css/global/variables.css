@@ -1,0 +1,9 @@
+:root {
+	@design-token-utils (custom-properties);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		@design-token-utils (custom-properties: dark);
+	}
+}

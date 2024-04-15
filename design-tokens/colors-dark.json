@@ -1,0 +1,26 @@
+{
+	"title": "Colors for Dark Theme",
+	"description": "Variation of colors for dark theme",
+	"items": [
+		{
+			"name": "Darker",
+			"value": "#ffffff"
+		},
+		{
+			"name": "Dark",
+			"value": "#e2e8f0"
+		},
+		{
+			"name": "Mid",
+			"value": "#94a3b8"
+		},
+		{
+			"name": "Light",
+			"value": "#020617"
+		},
+		{
+			"name": "Primary",
+			"value": "#34d399"
+		}
+	]
+}
