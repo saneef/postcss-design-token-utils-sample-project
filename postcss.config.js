@@ -1,14 +1,14 @@
+import purgecss from "@fullhuman/postcss-purgecss";
 import postcssProcessTokens from "postcss-design-token-utils";
 import postcssImport from "postcss-import";
 import postcssImportExtGlob from "postcss-import-ext-glob";
-import { clampGenerator, tokensToObject } from "./utils.js";
-
 import darkColorTokens from "./design-tokens/colors-dark.json" assert { type: "json" };
 import colorTokens from "./design-tokens/colors.json" assert { type: "json" };
 import fontTokens from "./design-tokens/font-family.json" assert { type: "json" };
 import spacingTokens from "./design-tokens/spacing.json" assert { type: "json" };
 import fontSizeTokens from "./design-tokens/text-sizes.json" assert { type: "json" };
 import fontWeightTokens from "./design-tokens/text-weights.json" assert { type: "json" };
+import { clampGenerator, tokensToObject } from "./utils.js";
 
 const color = tokensToObject(colorTokens.items);
 const darkColor = tokensToObject(darkColorTokens.items);
@@ -42,6 +42,13 @@ const config = {
 				{ id: "spacing", prefix: "flow-space", property: "--flow-space" },
 			],
 		}),
+		...(isProduction
+			? [
+					purgecss({
+						content: ["./pages/*.html"],
+					}),
+				]
+			: []),
 	],
 };
 

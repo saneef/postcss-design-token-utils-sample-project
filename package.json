@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
-		"build": "",
+		"build": "NODE_ENV=production npm run build:css",
 		"build:css": "postcss --dir pages/css/ css/*.css",
 		"watch:css": "npm run build:css -- --watch",
 		"serve": "serve pages",
@@ -15,6 +15,7 @@
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
+		"@fullhuman/postcss-purgecss": "^6.0.0",
 		"npm-run-all": "^4.1.5",
 		"postcss": "^8.4.38",
 		"postcss-cli": "^11.0.0",

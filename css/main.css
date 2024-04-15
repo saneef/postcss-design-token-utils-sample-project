@@ -1,5 +1,6 @@
-@import "./global/variables.css";
 @import "./global/reset.css";
+
+@import "./global/variables.css";
 @import "./global/base.css";
 
 @import-glob './compositions/*.css';
