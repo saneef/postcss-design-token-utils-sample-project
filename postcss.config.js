@@ -17,7 +17,14 @@ const fontWeight = tokensToObject(fontWeightTokens.items);
 const spacing = tokensToObject(clampGenerator(spacingTokens.items));
 const fontSize = tokensToObject(clampGenerator(fontSizeTokens.items));
 
-const tokens = { color, darkColor, fontFamily, fontWeight, fontSize, spacing };
+const tokens = {
+	color,
+	darkColor,
+	fontFamily,
+	fontWeight,
+	fontSize,
+	spacing,
+};
 
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -25,7 +32,8 @@ const config = {
 	plugins: [
 		postcssImportExtGlob,
 		postcssImport,
-		postcssProcessTokens(tokens, {
+		postcssProcessTokens({
+			tokens,
 			breakpoints: {
 				sm: "320px",
 				md: "640px",
